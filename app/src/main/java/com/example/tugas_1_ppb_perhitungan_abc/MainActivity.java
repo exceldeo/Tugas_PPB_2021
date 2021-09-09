@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             x2 = x1;
             tvHasil.setText("x1 = " + x1 + " ,x2 = " + x2);
         }else {
-            tvHasil.setText("undefine");
+            tvHasil.setText("imajiner");
         }
 
     };
