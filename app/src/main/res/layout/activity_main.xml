@@ -22,8 +22,8 @@
                 android:id="@+id/tv_label1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="A Value = "
+                android:layout_weight="2"
+                android:text="Value 1 = "
                 android:textSize="8pt" />
 
             <EditText
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Input A Value"
+                android:hint="Input Value 1"
                 android:inputType="numberSigned|numberDecimal" />
         </LinearLayout>
 
@@ -45,8 +45,8 @@
                 android:id="@+id/tv_label2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="B Value = " />
+                android:layout_weight="2"
+                android:text="Value 2 = " />
 
             <EditText
                 android:id="@+id/et_input_b"
@@ -55,30 +55,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="numberSigned|numberDecimal"
-                android:hint="Input B Value"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:textSize="8pt"
-                android:id="@+id/tv_label3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="C Value = " />
-
-            <EditText
-                android:id="@+id/et_input_c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberSigned|numberDecimal"
-                android:hint="Input C Value"
+                android:hint="Input Value 2"
                 />
         </LinearLayout>
 
@@ -99,14 +76,40 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Button
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/btn_rumus"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="jumlah"></Button>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_tambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tambah"
+                android:onClick="operasi"
+                android:layout_marginRight="2dp"></Button>
+            <Button
+                android:id="@+id/btn_kurang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kurang"
+                android:onClick="operasi"
+                android:layout_marginRight="2dp"></Button>
+            <Button
+                android:id="@+id/btn_kali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kali"
+                android:onClick="operasi"
+                android:layout_marginRight="2dp"></Button>
+            <Button
+                android:id="@+id/btn_bagi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bagi"
+                android:onClick="operasi"
+                android:layout_marginRight="2dp"></Button>
+
+        </LinearLayout>
 
 
     </LinearLayout>

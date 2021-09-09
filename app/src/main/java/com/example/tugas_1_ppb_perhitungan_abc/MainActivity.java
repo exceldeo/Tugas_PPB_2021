@@ -13,9 +13,9 @@ import static java.lang.Math.sqrt;
 
 
 public class MainActivity extends AppCompatActivity {
-    private EditText etInputA,etInputB,etInputC;
+    private EditText etInputA,etInputB;
     private TextView tvHasil;
-    private Button btnRumus;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,39 +30,26 @@ public class MainActivity extends AppCompatActivity {
     private void setupItemView(){
         etInputA = (EditText) findViewById(R.id.et_input_a);
         etInputB = (EditText) findViewById(R.id.et_input_b);
-        etInputC = (EditText) findViewById(R.id.et_input_c);
-        btnRumus = (Button) findViewById(R.id.btn_rumus);
+
         tvHasil = (TextView) findViewById(R.id.tv_hasil);
 
-        btnRumus.setOnClickListener(perhutungan);
     }
 
-    private View.OnClickListener perhutungan = v -> {
-
-        Log.d("inputA" , etInputA.getText().toString());
-        Log.d("inputB" , etInputB.getText().toString());
-        Log.d("inputC" , etInputC.getText().toString());
+    public void operasi(View v){
 
         double a = Double.parseDouble(etInputA.getText().toString());
         double b = Double.parseDouble(etInputB.getText().toString());
-        double c = Double.parseDouble(etInputC.getText().toString());
-        double d,x1,x2;
+        double h = 0;
 
-        d = (b*b)-(4*a*c);
-
-        if ( d > 0 ){
-            x1 = (-b + sqrt(d)) / (2*a);
-            x2 = (-b - sqrt(d)) / (2*a);
-            tvHasil.setText("x1 = " + x1 + " ,x2 = " + x2);
-        }else if (d == 0){
-            x1 = (-b + sqrt(d)) / (2*a);
-            x2 = x1;
-            tvHasil.setText("x1 = " + x1 + " ,x2 = " + x2);
-        }else {
-            tvHasil.setText("imajiner");
+        switch (v.getId()){
+            case R.id.btn_tambah: h = a + b ; break;
+            case R.id.btn_kurang: h = a - b ; break;
+            case R.id.btn_kali: h = a * b ; break;
+            case R.id.btn_bagi: h = a / b ; break;
         }
 
-    };
+        tvHasil.setText("hasil = " + h);
+    }
 
     private void setupView(){
     }

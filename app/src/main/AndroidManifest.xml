@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tugas_1_PPB_Perhitungan_abc">
         <activity android:name=".MainActivity"
-            android:label="Perhitungan Rumus ABC">
+            android:label="Kalkulator Sederhana">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
