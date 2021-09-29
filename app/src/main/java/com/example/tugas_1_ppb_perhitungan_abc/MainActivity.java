@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
         etHarga.setText("");
 
         Integer sizeOrder = order.size();
-        item = sizeOrder;
+        item = item + jmlBarang;
 
-        tvJmlItem.setText(sizeOrder.toString());
+        tvJmlItem.setText(item.toString());
         tvTotalHargaItem.setText(total.toString());
 
         Toast.makeText(getApplicationContext(), "Barang berhasil ditambahkan", Toast.LENGTH_SHORT).show();
