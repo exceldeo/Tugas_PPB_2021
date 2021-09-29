@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,108 +8,139 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
+        android:padding="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inputNrp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/titikDua"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etNrp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:inputType="text"
+                    android:autofillHints="Input Nama Barang"
+                    tools:ignore="LabelFor" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/titikDua"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:autofillHints="input jumlah barang"
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    tools:ignore="LabelFor" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:textSize="8pt"
-                android:id="@+id/tv_label1"
+            android:orientation="vertical">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="A Value = " />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/et_input_a"
+                <Button
+                    android:id="@+id/BtnSimpan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/tambah"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/BtnAmbilData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/ambilData"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberSigned|numberDecimal"
-                android:hint="Input A Value"
-                />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/BtnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/update"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/BtnHapus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/hpsData"
+                    android:textColor="@android:color/white"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:textSize="8pt"
-                android:id="@+id/tv_label2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="B Value = " />
-
-            <EditText
-                android:id="@+id/et_input_b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberSigned|numberDecimal"
-                android:hint="Input B Value"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:textSize="8pt"
-                android:id="@+id/tv_label3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="C Value = " />
-
-            <EditText
-                android:id="@+id/et_input_c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberSigned|numberDecimal"
-                android:hint="Input C Value"
-                />
-        </LinearLayout>
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:id="@+id/tv_label4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Hasil"
-            android:textSize="12pt"/>
-
-        <TextView
-            android:textSize="10pt"
-            android:layout_marginTop="20dp"
-            android:id="@+id/tv_hasil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/btn_rumus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="jumlah"></Button>
-
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

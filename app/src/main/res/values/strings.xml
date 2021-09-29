@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Tugas_1_PPB_Perhitungan_abc</string>
+    <string name="app_name">Sale</string>
+    <string name="hint1">name</string>
+    <string name="nameCus">Name Customer </string>
+    <string name="labelNamaBarang">Nama Barang </string>
+    <string name="labelJumlahBarang">Jumlah Barang </string>
+    <string name="labelHarga">Harga </string>
+    <string name="tambah">Tambah</string>
+    <string name="item">Jumlah Item</string>
+    <string name="totalHarga">Total Harga</string>
+    <string name="titikDua"> : </string>
+    <string name="bayar">Uang Bayar</string>
+    <string name="lblBayar">Bayar</string>
+    <string name="hpsData">Hapus Data</string>
+    <string name="keluar">Keluar</string>
+    <string name="inputNrp">NRP</string>
+    <string name="nama">Nama</string>
+    <string name="update">Update Data</string>
+    <string name="ambilData">Ambil Data</string>
 </resources>
