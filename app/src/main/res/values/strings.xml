@@ -20,4 +20,5 @@
     <string name="kontakApp">Kontak App</string>
     <string name="prompt_hapus">Apakah anda yakin menghapus data ini?</string>
     <string name="cariKntk">Cari Kontak</string>
+    <string name="tlpnKntk">Telepon</string>
 </resources>
