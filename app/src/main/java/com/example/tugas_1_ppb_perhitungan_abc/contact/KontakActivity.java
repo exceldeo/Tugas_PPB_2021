@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,7 +33,7 @@ public class KontakActivity extends AppCompatActivity {
     private KontakAdapter kAdapter;
     private ListView lvKontak;
     private EditText etCariNama;
-    private Button btnTambahKontak,btnEditKontak, btnHapusKontak, btnCariKontak;
+    private Button btnTambahKontak,btnEditKontak, btnHapusKontak, btnCariKontak, btnTeleponKontak;
     private KontakModels pointerKontak = null;
     private SQLiteDatabase DB;
     private SQLiteOpenHelper Opendb;
@@ -40,7 +42,7 @@ public class KontakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kontak);
-        getSupportActionBar().setTitle("Aplikasi Tugas PPB");
+        getSupportActionBar().setTitle("Aplikasi Kontak");
 
         setupItemView();
         setupView();
@@ -58,6 +60,7 @@ public class KontakActivity extends AppCompatActivity {
         btnEditKontak = findViewById(R.id.btnEditKontak);
         btnHapusKontak = findViewById(R.id.btnHapusKontak);
         btnCariKontak = findViewById(R.id.btnCariKontak);
+        btnTeleponKontak = findViewById(R.id.btnTeleponKontak);
 
         //ListView
         lvKontak = findViewById(R.id.lvKontak);
@@ -66,6 +69,7 @@ public class KontakActivity extends AppCompatActivity {
         btnEditKontak.setOnClickListener(editKontak);
         btnHapusKontak.setOnClickListener(hapusKontak);
         btnCariKontak.setOnClickListener(cariKontak);
+        btnTeleponKontak.setOnClickListener(teleponKontak);
 
     }
 
@@ -76,7 +80,7 @@ public class KontakActivity extends AppCompatActivity {
         lvKontak.setAdapter(kAdapter);
         lvKontak.setOnItemClickListener((adapterView, view, i, l) -> {
             KontakModels kontak = (KontakModels) adapterView.getItemAtPosition(i);
-            Toast.makeText(this, "nama " + kontak.getNama() + " dipilih", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Anda memilih " + kontak.getNama(), Toast.LENGTH_LONG).show();
             pointerKontak = kontak;
         });
     }
@@ -190,6 +194,14 @@ public class KontakActivity extends AppCompatActivity {
         }
     };
 
+    private final View.OnClickListener teleponKontak = v -> {
+
+        Uri number = Uri.parse("tel:"+pointerKontak.getNoHp());
+        Intent callNumber = new Intent(Intent.ACTION_DIAL, number);
+
+        startActivity(callNumber);
+    };
+
     private void loadKontak() {
         kAdapter.clear();
         Cursor cur = DB.rawQuery("SELECT * FROM contact", null);
@@ -245,6 +257,7 @@ public class KontakActivity extends AppCompatActivity {
 
     private void hapusKontak(String nama){
         DB.delete("contact", "nama='" + nama + "'", null);
+        loadKontak();
     }
 
     private void updateKontak(String nama, String noHp){
