@@ -65,6 +65,9 @@ public class KontakActivity extends AppCompatActivity {
         //ListView
         lvKontak = findViewById(R.id.lvKontak);
 
+        //Fragment
+//        getSupportFragmentManager().beginTransaction().add(R.id.fragment_test, new DescriptionFragment(), DescriptionFragment.class.getSimpleName()).commit();
+
         btnTambahKontak.setOnClickListener(tambahKontak);
         btnEditKontak.setOnClickListener(editKontak);
         btnHapusKontak.setOnClickListener(hapusKontak);

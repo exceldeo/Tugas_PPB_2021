@@ -8,6 +8,12 @@
     tools:context=".contact.KontakActivity"
     android:orientation="vertical">
 
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_test"
+        android:name="com.example.tugas_1_ppb_perhitungan_abc.contact.DescriptionFragment"></fragment>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +56,6 @@
                 android:textColor="@android:color/white"
                 tools:ignore="ButtonStyle" />
         </TableRow>
-
 
     </TableLayout>
 

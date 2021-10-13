@@ -21,4 +21,6 @@
     <string name="prompt_hapus">Apakah anda yakin menghapus data ini?</string>
     <string name="cariKntk">Cari Kontak</string>
     <string name="tlpnKntk">Telepon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
