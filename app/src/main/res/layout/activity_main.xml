@@ -21,7 +21,19 @@
                 android:textColor="@android:color/white"
                 tools:ignore="ButtonStyle" />
 
-            <Button
+        <Button
+            android:id="@+id/btnGps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button"
+            android:text="@string/gpsApp"
+            android:textColor="@android:color/white"
+            tools:ignore="ButtonStyle" />
+
+
+        <Button
                 android:id="@+id/btnKeluar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

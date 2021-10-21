@@ -1,8 +1,5 @@
 package com.example.tugas_1_ppb_perhitungan_abc.contact;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -11,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -20,10 +16,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.tugas_1_ppb_perhitungan_abc.R;
 import com.example.tugas_1_ppb_perhitungan_abc.contact.adapter.KontakAdapter;
 import com.example.tugas_1_ppb_perhitungan_abc.contact.data.KontakModels;
-import com.example.tugas_1_ppb_perhitungan_abc.contact.data.KontakRepository;
 
 import java.util.ArrayList;
 
@@ -33,10 +31,13 @@ public class KontakActivity extends AppCompatActivity {
     private KontakAdapter kAdapter;
     private ListView lvKontak;
     private EditText etCariNama;
-    private Button btnTambahKontak,btnEditKontak, btnHapusKontak, btnCariKontak, btnTeleponKontak;
+    private Button btnTambahKontak,btnEditKontak, btnHapusKontak, btnCariKontak, btnTeleponKontak, btnChangeFragment;
     private KontakModels pointerKontak = null;
     private SQLiteDatabase DB;
     private SQLiteOpenHelper Opendb;
+    DescriptionFragment fragmentA = new DescriptionFragment();
+    DescriptionFragment2 fragmentB = new DescriptionFragment2();
+    private boolean changeFragmentCheck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class KontakActivity extends AppCompatActivity {
         btnHapusKontak = findViewById(R.id.btnHapusKontak);
         btnCariKontak = findViewById(R.id.btnCariKontak);
         btnTeleponKontak = findViewById(R.id.btnTeleponKontak);
+        btnChangeFragment = findViewById(R.id.btnChangeFragment);
 
         //ListView
         lvKontak = findViewById(R.id.lvKontak);
@@ -70,6 +72,7 @@ public class KontakActivity extends AppCompatActivity {
         btnHapusKontak.setOnClickListener(hapusKontak);
         btnCariKontak.setOnClickListener(cariKontak);
         btnTeleponKontak.setOnClickListener(teleponKontak);
+        btnChangeFragment.setOnClickListener(changeFragment);
 
     }
 
@@ -200,6 +203,16 @@ public class KontakActivity extends AppCompatActivity {
         Intent callNumber = new Intent(Intent.ACTION_DIAL, number);
 
         startActivity(callNumber);
+    };
+
+    private final View.OnClickListener changeFragment = v -> {
+        if(changeFragmentCheck){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_test, fragmentA).addToBackStack(null).commit();
+        }
+        else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_test, fragmentB).addToBackStack(null).commit();
+        }
+        changeFragmentCheck = !changeFragmentCheck;
     };
 
     private void loadKontak() {
