@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tugas_1_ppb_perhitungan_abc.contact.KontakActivity;
+import com.example.tugas_1_ppb_perhitungan_abc.contactApi.ContactApiActivity;
 import com.example.tugas_1_ppb_perhitungan_abc.gps.GpsActivity;
 
 
@@ -51,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private final View.OnClickListener keluar = v -> {
-        moveTaskToBack(true);
+        startActivity(new Intent(MainActivity.this, ContactApiActivity.class));
+//
+//        moveTaskToBack(true);
     };
 
 }

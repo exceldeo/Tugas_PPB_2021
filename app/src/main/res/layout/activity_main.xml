@@ -40,7 +40,7 @@
                 android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_button"
-                android:text="@string/keluar"
+                android:text="@string/ListCountry"
                 android:textColor="@android:color/white"
                 tools:ignore="ButtonStyle" />
 

@@ -232,6 +232,7 @@ public class GpsActivity extends AppCompatActivity implements GoogleApiClient.Co
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
         };
+
         ActivityCompat.requestPermissions(this, permission, PERMISSION_REQUEST_LOCATION_UPDATES);
     }
 
